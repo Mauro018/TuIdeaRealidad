@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Idea Hecha Realidad</title>
+    <link href="./Css/Estilos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Tu Idea Hecha Realidad</h1>
+        <nav>
+        <ul>
+            <li><a href="Index0.html">Inicio</a></li>
+            <li><a href="Index1.html">¿Quienes Somos?</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="Reglas.html">Reglas Sobre los Diseños</a></li>
+            <li><a href="Empresas.html">Empresas Asociadas</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <div id="mision-vision">
+            <div>
+                <h2>Misión</h2>
+                <p>Nuestra misión es transformar tus ideas en productos tangibles y personalizados, impulsando la creatividad y la innovación.</p>
+                <img src="./Imagenes/pixlr-image-generator-5049adc0-a6bb-4ab8-b7c2-f52726a9611f.png" width="200" height="200">
+            </div>
+            <div>
+                <h2>Visión</h2>
+                <p>Ser la plataforma líder en la creación de productos personalizados, reconocida por la calidad, la originalidad y la satisfacción del cliente.</p>
+                <img src="./Imagenes/pixlr-image-generator-62c93141-82e3-46c2-8f04-59972acd7f41.png" width="200" height="200">
+            </div>
+        </div>
+        <div id="que-hacemos">
+            <h2>Qué Hacemos</h2>
+            <p>En "Tu Idea Hecha Realidad", te ofrecemos la posibilidad de diseñar y crear productos únicos, adaptados a tus necesidades y gustos.  Desde el concepto inicial hasta la producción final, te acompañamos en cada paso del proceso para garantizar que el resultado supere tus expectativas.  Trabajamos con diversos materiales y técnicas para hacer realidad cualquier idea que tengas.</p>
+            <img src="./Imagenes/Gemini_Generated_Image_tzay6utzay6utzay.jfif" width="300" height="300">
+        </div>
+        <div id="idea-producto">
+            <h2>¿Tienes una Idea para un Producto?</h2>
+            <p>¡Cuéntanos tu idea y la haremos realidad!  Haz clic en el botón para contactarnos y comenzar el proceso de diseño.</p>
+            <button id="contactar-asesor">Contactar a un Asesor</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Tu Idea Hecha Realidad. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="chat-container minimized" id="chat-container">
+        <div class="chat-header" id="chat-header">
+            Chat con Asesor
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            </div>
+        <div class="chat-input" id="chat-input">
+            <input type="text" id="chat-input-text" placeholder="Escribe tu mensaje...">
+            <button id="chat-send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Interacción del Chat
+        const chatContainer = document.getElementById('chat-container');
+        const chatHeader = document.getElementById('chat-header');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInputText = document.getElementById('chat-input-text');
+        const chatSendButton = document.getElementById('chat-send-button');
+        const contactarAsesorButton = document.getElementById('contactar-asesor');
+
+        let isChatMinimized = true;
+
+        function toggleChat() {
+            isChatMinimized = !isChatMinimized;
+            chatContainer.classList.toggle('minimized', isChatMinimized);
+        }
+
+        function sendMessage() {
+            const messageText = chatInputText.value.trim();
+            if (messageText === '') return;
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.textContent = messageText;
+            chatMessages.appendChild(messageElement);
+
+            // Simulación de respuesta del bot (puedes personalizar esto)
+            setTimeout(() => {
+                const botResponse = document.createElement('div');
+                botResponse.classList.add('message', 'bot');
+                botResponse.textContent = "¡Gracias por tu mensaje! Un asesor se pondrá en contacto contigo pronto.";
+                chatMessages.appendChild(botResponse);
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+            }, 1000);
+
+            chatInputText.value = ''; // Limpiar el input
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+        }
+
+        chatHeader.addEventListener('click', toggleChat);
+        chatSendButton.addEventListener('click', sendMessage);
+        chatInputText.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        contactarAsesorButton.addEventListener('click', () => {
+            if (isChatMinimized) {
+                toggleChat();
+            }
+            // Aquí podrías agregar lógica para enfocar el input del chat
+            chatInputText.focus();
+        });
+    </script>
+</body>
+</html>

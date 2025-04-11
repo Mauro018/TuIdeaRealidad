@@ -1,0 +1,540 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #918c8c;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #003366; /* Azul más oscuro */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #004080; /* Un tono de azul intermedio */
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    background-color: #002040; /* Azul más oscuro al pasar el mouse */
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8a8a8a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#mision-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#mision-vision div {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+#mision-vision h2 {
+    color: #003366; /* Azul más oscuro */
+    margin-bottom: 0.5rem;
+}
+
+#que-hacemos {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#que-hacemos h2 {
+    color: #003366; /* Azul más oscuro */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#idea-producto {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#idea-producto h2 {
+    color: #003366; /* Azul más oscuro */
+    margin-bottom: 1rem;
+}
+
+#idea-producto p {
+    margin-bottom: 1rem;
+}
+
+#idea-producto button {
+    background-color: #0066cc; /* Azul principal */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#idea-producto button:hover {
+    background-color: #004080; /* Azul más oscuro al pasar el mouse */
+}
+
+footer {
+    background-color: #003366; /* Azul más oscuro */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+/* Estilos para el chat (puedes ajustar según tus necesidades) */
+.chat-container {
+    position: fixed; /* Posición fija para que se pegue al fondo */
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Ancho inicial del chat */
+    height: 400px; /* Altura inicial del chat */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Para que el contenido no se desborde */
+    transition: all 0.3s ease; /* Transición suave para expandir/contraer */
+}
+
+.chat-header {
+    background-color: #0066cc; /* Azul del chat */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer; /* Para indicar que es interactivo */
+    border-bottom: 1px solid #004080;
+}
+
+.chat-messages {
+    flex: 1; /* El área de mensajes ocupa el espacio restante */
+    padding: 10px;
+    overflow-y: auto; /* Barra de desplazamiento si el contenido se desborda */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message {
+    background-color: #e0e0e0;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    align-self: flex-start; /* Mensajes del usuario a la izquierda */
+}
+
+.message.bot {
+    background-color: #d0f0f0;
+    align-self: flex-end; /* Mensajes del bot a la derecha */
+}
+
+.chat-input {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 5px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.chat-input button {
+    background-color: #0066cc; /* Azul del chat */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.chat-input button:hover {
+    background-color: #004080;
+}
+
+.chat-container.minimized {
+    height: auto; /* Altura automática para mostrar solo el encabezado */
+    width: 300px;
+}
+
+.chat-container.minimized .chat-messages,
+.chat-container.minimized .chat-input {
+    display: none;
+}
+
+#banner {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 80%; /* Ancho máximo del banner */
+}
+
+#banner h2 {
+    color: #003366;
+    margin-bottom: 1rem;
+    font-size: 2rem; /* Tamaño de fuente más grande para el título del banner */
+}
+
+#banner p {
+    margin-bottom: 1.5rem; /* Margen inferior aumentado */
+    font-size: 1.2rem; /* Tamaño de fuente aumentado para el texto del banner */
+    line-height: 1.7; /* Espaciado entre líneas aumentado para mejor legibilidad */
+}
+
+.cta-button {
+    background-color: #0066cc;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Tamaño de fuente aumentado para el botón CTA */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #004080;
+}
+
+#servicios-destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los servicios destacados */
+    gap: 1.5rem; /* Gap aumentado */
+    margin-bottom: 2rem;
+    width: 100%; /* Asegurar que los servicios destacados ocupen el ancho completo del main */
+}
+
+.servicio-card {
+    background-color: white;
+    padding: 1.5rem; /* Padding aumentado */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 250px; /* Ancho mínimo aumentado */
+    transition: transform 0.3s ease; /* Transición para la animación de escala */
+}
+
+.servicio-card:hover {
+    transform: scale(1.05); /* Escala aumentada al pasar el mouse */
+}
+
+.servicio-card h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Tamaño de fuente aumentado para los títulos de los servicios */
+}
+
+.servicio-card p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Tamaño de fuente aumentado para las descripciones de los servicios */
+    line-height: 1.7;
+}
+
+/* Estilos para la sección de testimonios */
+#testimonios {
+    background-color: #b3b0b0;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#testimonios h2 {
+    font-size: 2rem;
+    color: #0856a5;
+    margin-bottom: 1rem;
+}
+
+.testimonios-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.testimonios-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonio-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+}
+
+.testimonio-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.testimonio-card h4 {
+    font-size: 1.2rem;
+    color: #003366;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    color: #004080;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.subsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.subsection-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.ver-mas-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.ver-mas-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    .section h2 {
+        font-size: 1.5em;
+    }
+    .section ul li {
+        font-size: 0.9em;
+    }
+    .subsection-image {
+        max-width: 100%;
+    }
+}
+
+.container2 {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #5e5c5c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 p {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #1e08e7;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: white;
+}
+
+li p::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+ul.no-allowed li::before {
+    content: '❌';
+    color: #FF5252;
+}
+
+@media (max-width: 768px) {
+    .container2 {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    li {
+        font-size: 0.9em;
+    }
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.servicio {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.servicio a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.servicio a:hover {
+    text-decoration: underline;
+}
+
+img {
+    align-self: center;
+}

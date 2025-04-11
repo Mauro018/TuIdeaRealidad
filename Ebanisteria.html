@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria Ebanisteria</title>
+    <link rel="stylesheet" href="./Css/Estilos.css">
+    <style class="Categoria">
+            body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #categorias {
+            display: none;
+            margin-top: 20px;
+        }
+        .categoria {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Productos y Servicios</h1>
+        <nav>
+        <ul>
+            <li><a href="Index0.html">Inicio</a></li>
+            <li><a href="Index1.html">¿Quienes Somos?</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="Reglas.html">Reglas Sobre los Diseños</a></li>
+            <li><a href="Empresas.html">Empresas Asociadas</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div>
+        <img src="./imagenes 3/carpinteria-y-ebanisteria.webp" height="300" alt="300">
+    </div>
+        <h3>Empezemos con tu proyecto</h3>
+        <button onclick="mostrarCategorias()">Empezar</button>
+    <div id="categorias">
+        <div><a href="./mueblesFinos.html" class="categoria">Muebles finos</a></div>
+        <div><a href="./RevestimientoMadera.html" class="categoria">Revestimientos en madera</a></div>
+        <div><a href="./RestauracionMuebles.html" class="categoria">Restauracion de muebles</a></div>
+    </div>
+    <script>
+        function mostrarCategorias() {
+            document.getElementById('categorias').style.display = 'block';
+        }
+    </script>
+</html>
